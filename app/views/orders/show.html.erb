@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+
+<p>
+  <b>Id</b>
+  <%= @order.id %>
+</p>
+
+<p>
+  <b>Length</b>
+  <%= @order.length %>
+</p>
+
+<p>
+  <b>Width:</b>
+  <%= @order.width %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%= @order.height %>
+</p>
+
+<p>
+  <b>Sender's Zipcode:</b>
+  <%= Address.find(@order.origin_id).zipcode %>
+</p>
+
+<p>
+  <b>Destination Zipcode:</b>
+  <%= Address.find(@order.destination_id).zipcode %>
+</p>
+
+<p>
+  <b>Shipping charges:</b>
+  <%= @order.shipping_price %>
+ 
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
